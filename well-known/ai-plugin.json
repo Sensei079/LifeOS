@@ -9,7 +9,7 @@
 },
 "api": {
   "type": "openapi",
-  "url": "https://lifeos-vyxx.onrender.com"
+  "url": "https://lifeos-vyxx.onrender.com/openapi.json"
 },
 "logo_url": "",
 "contact_email": "abhinavy2003@gmail.com",
