@@ -1,0 +1,15 @@
+{
+"schema_version": "v1",
+"name_for_model": "lifeos",
+"name_for_human": "LifeOS Assistant",
+"description_for_model": "Get and manage tasks, calendar, and wellness context for life optimization.",
+"description_for_human": "Helps you manage your daily life and decisions using Claude.",
+"auth": {
+  "type": "none"
+},
+"api": {
+  "type": "openapi",
+  "url": "https://lifeos-vyxx.onrender.com/openapi.json"
+},
+"contact_email": "abhinavy2003@gmail.com"
+}
