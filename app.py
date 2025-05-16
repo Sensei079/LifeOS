@@ -36,11 +36,6 @@ def create_app():
     def serve_manifest():
         return send_from_directory(".well-known", "ai-plugin.json", mimetype="application/json")
 
-    # Serve static files like logo
-    @app.route('/static/<path:filename>')
-    def serve_static(filename):
-        return send_from_directory('static', filename)
-
     # Optional: Serve legal info page
     @app.route("/legal")
     def legal():
