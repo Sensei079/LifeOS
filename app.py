@@ -32,7 +32,7 @@ def create_app():
         return send_from_directory(".", "openapi.json", mimetype="application/json")
 
     # Serve Claude plugin manifest
-    @app.route("/.well-known/ai-plugin.json")
+    @app.route("/well-known/ai-plugin.json")
     def serve_manifest():
         return send_from_directory(".well-known", "ai-plugin.json", mimetype="application/json")
 
