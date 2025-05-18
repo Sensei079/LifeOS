@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "LifeOS API",
+    "description": "LifeOS personal assistant API for managing tasks, calendar events, notes, and health logs.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://lifeos-vyxx.onrender.com"
+    }
+  ],
+  "paths": {
+    "/tasks/": {
+      "get": {
+        "summary": "Retrieve all tasks",
+        "responses": {
+          "200": {
+            "description": "List of tasks"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new task",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string" },
+                  "description": { "type": "string" },
+                  "due_date": { "type": "string" }
+                },
+                "required": ["title"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Task created successfully"
+          }
+        }
+      }
+    },
+    "/calendar/": {
+      "get": {
+        "summary": "Retrieve all calendar events",
+        "responses": {
+          "200": {
+            "description": "List of calendar events"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new calendar event",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string" },
+                  "date": { "type": "string" },
+                  "time": { "type": "string" },
+                  "description": { "type": "string" }
+                },
+                "required": ["title", "date", "time"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Event added successfully"
+          }
+        }
+      }
+    },
+    "/notes/": {
+      "get": {
+        "summary": "Retrieve all notes",
+        "responses": {
+          "200": {
+            "description": "List of notes"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new note",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string" },
+                  "content": { "type": "string" }
+                },
+                "required": ["title"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Note created successfully"
+          }
+        }
+      }
+    },
+    "/health/": {
+      "get": {
+        "summary": "Retrieve health logs",
+        "responses": {
+          "200": {
+            "description": "List of health entries"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new health log",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "metric": { "type": "string" },
+                  "value": { "type": "string" },
+                  "date": { "type": "string" }
+                },
+                "required": ["metric", "value"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Health log added successfully"
+          }
+        }
+      }
+    }
+  }
+}
